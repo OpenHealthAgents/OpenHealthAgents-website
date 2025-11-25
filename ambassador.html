@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambassador Program - Open Health Agents</title>
+    <meta name="description"
+        content="Join the Open Health Agents Ambassador Program. Lead a university chapter and build the future of healthcare AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .benefit-card {
+            background: var(--white);
+            padding: var(--spacing-md);
+            border-radius: 16px;
+            border: 1px solid #eee;
+            text-align: center;
+            transition: transform var(--transition-speed);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        .chapter-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .chapter-card {
+            background: var(--background-light);
+            padding: var(--spacing-md);
+            border-radius: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    OpenHealthAgents
+                </a>
+                <div class="nav-links">
+                    <a href="architecture.html">Architecture</a>
+                    <a href="agents.html">Agents</a>
+                    <a href="safety.html">Safety</a>
+                    <a href="research.html">Research</a>
+                    <a href="opensource.html">Open Source</a>
+                    <a href="https://github.com/openhealthagents" target="_blank" class="btn btn-primary">GitHub</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Lead the Future of AI on Your Campus</h1>
+                    <p>Become an Open Health Agents Ambassador. Build a community, gain mentorship, and shape the future
+                        of open-source healthcare AI.</p>
+                    <div class="hero-cta">
+                        <a href="#" class="btn btn-primary">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--spacing-lg);">
+                    <h2>Program Benefits</h2>
+                    <p>Why you should join the movement.</p>
+                </div>
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md);">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🚀</span>
+                        <h3>Leadership Experience</h3>
+                        <p>Lead a university chapter, organize hackathons, and build your professional network.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🤝</span>
+                        <h3>Mentorship</h3>
+                        <p>Direct access to OHA core engineers and researchers for career guidance and technical
+                            support.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🎓</span>
+                        <h3>Skill Building</h3>
+                        <p>Deep dive into LLMs, RAG, and AI safety through exclusive workshops and resources.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background-color: var(--background-light);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--spacing-lg);">
+                    <h2>How to Join</h2>
+                    <p>Three simple steps to becoming an ambassador.</p>
+                </div>
+                <ol class="step-list">
+                    <li class="step-item">
+                        <h3>Submit Application</h3>
+                        <p>Tell us about yourself, your technical background, and why you want to lead a chapter.</p>
+                    </li>
+                    <li class="step-item">
+                        <h3>Interview</h3>
+                        <p>A short chat with our community team to align on goals and expectations.</p>
+                    </li>
+                    <li class="step-item">
+                        <h3>Launch Chapter</h3>
+                        <p>Get your welcome kit, access to resources, and kick off your first event!</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--spacing-lg);">
+                    <h2>Current Chapters</h2>
+                    <p>Join students from top universities around the world.</p>
+                </div>
+                <div class="chapter-list">
+                    <div class="chapter-card">
+                        <h3>Stanford University</h3>
+                        <p>California, USA</p>
+                    </div>
+                    <div class="chapter-card">
+                        <h3>MIT</h3>
+                        <p>Massachusetts, USA</p>
+                    </div>
+                    <div class="chapter-card">
+                        <h3>Imperial College London</h3>
+                        <p>London, UK</p>
+                    </div>
+                    <div class="chapter-card">
+                        <h3>IIT Bombay</h3>
+                        <p>Mumbai, India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>OpenHealthAgents</h4>
+                    <p>The open standard for healthcare AI agents.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="architecture.html">Architecture</a></li>
+                        <li><a href="safety.html">Safety</a></li>
+                        <li><a href="architecture.html#integration">Integration</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/openhealthagents">GitHub</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="opensource.html">Contributing</a></li>
+                        <li><a href="ambassador.html">Ambassador Program</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Open Health Agents. Released under Apache 2.0 License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

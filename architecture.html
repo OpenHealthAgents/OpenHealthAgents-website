@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Architecture - Open Health Agents</title>
+    <meta name="description" content="Deep dive into the technical architecture of the Open Health Agents framework.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    OpenHealthAgents
+                </a>
+                <div class="nav-links">
+                    <a href="architecture.html" class="active" style="color: var(--primary-color);">Architecture</a>
+                    <a href="agents.html">Agents</a>
+                    <a href="safety.html">Safety</a>
+                    <a href="research.html">Research</a>
+                    <a href="opensource.html">Open Source</a>
+                    <a href="https://github.com/openhealthagents" target="_blank" class="btn btn-primary">GitHub</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>The Constellation Architecture</h1>
+                    <p>A modular, safety-first design built for scalability and clinical rigor.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--spacing-lg);">
+                    <h2>System Overview</h2>
+                    <p>How the pieces fit together to deliver safe healthcare AI.</p>
+                </div>
+
+                <div class="arch-diagram-container">
+                    <!-- Interaction Layer -->
+                    <div class="layer-box" style="border-color: var(--primary-color);">
+                        <div class="layer-title">Interaction Layer</div>
+                        <div class="layer-content">
+                            <div class="component-node">Web Interface</div>
+                            <div class="component-node">Mobile App</div>
+                            <div class="component-node">Voice Gateway</div>
+                            <div class="component-node">SMS/Text</div>
+                        </div>
+                    </div>
+
+                    <!-- Orchestration & Safety Layer -->
+                    <div class="layer-box" style="border-color: var(--secondary-color); background: #f0f7ff;">
+                        <div class="layer-title">Orchestration & Safety Guardian</div>
+                        <div class="layer-content">
+                            <div class="component-node" style="background: var(--secondary-color); color: white;">Router
+                                Agent</div>
+                            <div class="component-node" style="background: var(--error-color); color: white;">Safety
+                                Guardrails</div>
+                            <div class="component-node">Context Manager</div>
+                            <div class="component-node">Audit Logger</div>
+                        </div>
+                    </div>
+
+                    <!-- Agent Layer -->
+                    <div class="layer-box">
+                        <div class="layer-title">Agent Constellation</div>
+                        <div class="layer-content">
+                            <div class="component-node">Medication Agent</div>
+                            <div class="component-node">Medical Info Agent</div>
+                            <div class="component-node">Empathy Agent</div>
+                            <div class="component-node">Admin Agent</div>
+                            <div class="component-node">Specialist Agents</div>
+                        </div>
+                    </div>
+
+                    <!-- Foundation Model Layer -->
+                    <div class="layer-box" style="border-color: #4285F4; background: #e8f0fe;">
+                        <div class="layer-title">Foundation Model</div>
+                        <div class="layer-content">
+                            <div class="component-node"
+                                style="background: #4285F4; color: white; width: 100%; text-align: center;">Google
+                                MedGemma (Open Source)</div>
+                        </div>
+                    </div>
+
+                    <!-- Data & Integration Layer -->
+                    <div class="layer-box">
+                        <div class="layer-title">Data & Integration Layer</div>
+                        <div class="layer-content">
+                            <div class="component-node">Vector Database (RAG)</div>
+                            <div class="component-node">FHIR API Gateway</div>
+                            <div class="component-node">EHR Integration</div>
+                            <div class="component-node">Medical Knowledge Graph</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="background-color: var(--background-light);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--spacing-lg);">
+                    <h2>Component Deep Dive</h2>
+                    <p>Technical specifications for core system components.</p>
+                </div>
+
+                <div class="deep-dive-grid">
+
+                    <div class="feature-card">
+                        <h3>The Agent Layer</h3>
+                        <p>Each agent is a specialized LLM chain with a specific prompt, toolset, and knowledge base.
+                        </p>
+                        <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-color);">
+                            <li><strong>Medication Agent:</strong> Connected to FDA drug databases. Strict
+                                "no-prescription" hard constraint.</li>
+                            <li><strong>Medical Info Agent:</strong> RAG-based retrieval from curated medical journals
+                                (PubMed, etc.).</li>
+                            <li><strong>Empathy Agent:</strong> Fine-tuned on therapeutic conversation datasets.
+                                Prioritizes sentiment analysis.</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>The Safety Guardian</h3>
+                        <p>A deterministic middleware that intercepts all agent inputs and outputs.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-color);">
+                            <li><strong>Input Guard:</strong> PII redaction, intent classification (emergency
+                                detection).</li>
+                            <li><strong>Output Guard:</strong> Hallucination check (citation verification), toxicity
+                                filter, medical advice boundary check.</li>
+                            <li><strong>Escalation Protocol:</strong> Automatic routing to human support if confidence
+                                score drops below 0.95.</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card" id="integration">
+                        <h3>Integration Standards</h3>
+                        <p>Built for interoperability with existing hospital systems.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.5rem; color: var(--text-color);">
+                            <li><strong>FHIR R4:</strong> Native support for Fast Healthcare Interoperability Resources.
+                            </li>
+                            <li><strong>SMART on FHIR:</strong> Secure authorization and launch context.</li>
+                            <li><strong>HL7 v2:</strong> Legacy support via adapter layers.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--spacing-lg);">
+                    <h2>Built on Open Standards</h2>
+                </div>
+
+                <div class="tech-stack-grid">
+                    <div class="tech-card">
+                        <span class="tech-icon">🧠</span>
+                        <div><strong>MedGemma</strong><br><small>LLM Backbone</small></div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-icon">🐍</span>
+                        <div><strong>Python</strong><br><small>Core Runtime</small></div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-icon">🦜</span>
+                        <div><strong>LangChain</strong><br><small>Orchestration</small></div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-icon">🗄️</span>
+                        <div><strong>PostgreSQL</strong><br><small>Relational Data</small></div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-icon">🔍</span>
+                        <div><strong>Milvus</strong><br><small>Vector Search</small></div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-icon">🐳</span>
+                        <div><strong>Docker</strong><br><small>Containerization</small></div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-icon">🛡️</span>
+                        <div><strong>NeMo Guardrails</strong><br><small>Safety</small></div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-icon">📊</span>
+                        <div><strong>MLflow</strong><br><small>Observability</small></div>
+                    </div>
+                    <div class="tech-card">
+                        <span class="tech-icon">🔥</span>
+                        <div><strong>FHIR</strong><br><small>Data Standard</small></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>OpenHealthAgents</h4>
+                    <p>The open standard for healthcare AI agents.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="architecture.html">Architecture</a></li>
+                        <li><a href="safety.html">Safety</a></li>
+                        <li><a href="architecture.html#integration">Integration</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://github.com/openhealthagents">GitHub</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="opensource.html">Contributing</a></li>
+                        <li><a href="ambassador.html">Ambassador Program</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Open Health Agents. Released under Apache 2.0 License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
