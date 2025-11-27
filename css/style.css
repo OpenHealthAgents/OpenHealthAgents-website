@@ -132,6 +132,23 @@ p {
     color: var(--text-light);
 }
 
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-color);
+    transition: fill 0.3s ease;
+}
+
+.social-icon:hover {
+    fill: var(--primary-color);
+}
+
 /* Header */
 header {
     position: fixed;

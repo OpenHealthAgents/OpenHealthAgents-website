@@ -59,38 +59,24 @@
 
         <section class="section-padding">
             <div class="container">
-                <div class="text-center">
-                    <h2>Ways to Contribute</h2>
-                    <p>Find the path that matches your skills and interests.</p>
+                <div class="text-center" style="margin-bottom: var(--spacing-lg);">
+                    <h2>Governance Model</h2>
+                    <p>We follow the Commercial Open Source Software (COSS) model.</p>
                 </div>
-
-                <div class="contributor-grid">
+                <div class="contributor-grid" style="grid-template-columns: repeat(2, 1fr);">
                     <div class="contributor-card">
-                        <span class="card-icon">💻</span>
-                        <h3>For Developers</h3>
-                        <p>Build core framework features, create new agents, or improve our safety guardrails. Check out
-                            our "Good First Issues" on GitHub.</p>
-                        <a href="#"
-                            style="color: var(--primary-color); font-weight: 600; margin-top: 1rem; display: inline-block;">View
-                            Dev Docs &rarr;</a>
+                        <span class="card-icon">🏛️</span>
+                        <h3>Core Platform</h3>
+                        <p><strong>License: Apache 2.0 / MIT</strong></p>
+                        <p>The core agentic framework, FHIR connectors, and basic safety guardrails are free and open
+                            forever. We encourage widespread adoption.</p>
                     </div>
                     <div class="contributor-card">
-                        <span class="card-icon">🎓</span>
-                        <h3>For Students</h3>
-                        <p>Join the OHA Student Ambassador program. Lead a university chapter, get mentorship, and learn
-                            real-world AI development.</p>
-                        <a href="#"
-                            style="color: var(--primary-color); font-weight: 600; margin-top: 1rem; display: inline-block;">Student
-                            Program &rarr;</a>
-                    </div>
-                    <div class="contributor-card">
-                        <span class="card-icon">🔬</span>
-                        <h3>For Researchers</h3>
-                        <p>Validate our safety models, contribute to our medical corpora, or publish papers using the
-                            OHA framework.</p>
-                        <a href="#"
-                            style="color: var(--primary-color); font-weight: 600; margin-top: 1rem; display: inline-block;">Research
-                            Hub &rarr;</a>
+                        <span class="card-icon">🏢</span>
+                        <h3>Enterprise Features</h3>
+                        <p><strong>License: Commercial</strong></p>
+                        <p>Advanced features like SSO, Long-term Audit Logs, and Advanced Analytics are available for
+                            enterprise deployments.</p>
                     </div>
                 </div>
             </div>
@@ -99,44 +85,63 @@
         <section class="section-padding" style="background-color: var(--background-light);">
             <div class="container">
                 <div class="text-center" style="margin-bottom: var(--spacing-lg);">
-                    <h2>Getting Started</h2>
-                    <p>It's easy to make your first contribution.</p>
+                    <h2>Roadmap to Launch</h2>
+                    <p>Our phased approach to building the operating system for healthcare agents.</p>
                 </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Q1: The "Skeletal" MVP</h3>
+                        <p><strong>Goal:</strong> Developer-friendly framework.</p>
+                        <p>Deliverable: <code>pip install healthcare-agent-core</code>. Demo "Appointment Agent"
+                            connecting to HAPI FHIR.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Q2: The "Scribe" Pilot</h3>
+                        <p><strong>Goal:</strong> Solve one real problem.</p>
+                        <p>Deliverable: Ambient listening agent for clinical notes. Beta testing with private practices.
+                        </p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Q3: The "Guardian" Release</h3>
+                        <p><strong>Goal:</strong> Enterprise readiness.</p>
+                        <p>Deliverable: Full Guardian Layer with RBAC and "Human-in-the-Loop" dashboards.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Q4: The Ecosystem</h3>
+                        <p><strong>Goal:</strong> Scale via community.</p>
+                        <p>Deliverable: Launch "Agent Marketplace" for third-party developers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <ol class="step-list">
-                    <li class="step-item">
-                        <h3>Fork the Repository</h3>
-                        <p>Visit our GitHub and fork the core repository to your own account.</p>
-                    </li>
-                    <li class="step-item">
-                        <h3>Pick an Issue</h3>
-                        <p>Look for issues tagged <code>good-first-issue</code> or <code>help-wanted</code>. We have
-                            tasks for all skill levels.</p>
-                    </li>
-                    <li class="step-item">
-                        <h3>Submit a Pull Request</h3>
-                        <p>Push your changes and submit a PR. Our maintainers will review your code and guide you
-                            through the merge process.</p>
-                    </li>
-                </ol>
-
-                <div class="community-stats">
-                    <div class="stat-box">
-                        <strong>150+</strong>
-                        <span>Active Contributors</span>
-                    </div>
-                    <div class="stat-box">
-                        <strong>500+</strong>
-                        <span>PRs Merged</span>
-                    </div>
-                    <div class="stat-box">
-                        <strong>2.5k</strong>
-                        <span>Discord Members</span>
-                    </div>
-                    <div class="stat-box">
-                        <strong>12</strong>
-                        <span>University Chapters</span>
-                    </div>
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: var(--spacing-lg);">
+                    <h2>Repository Structure</h2>
+                    <p>A look inside the <code>openhealth-agents</code> codebase.</p>
+                </div>
+                <div class="code-block-container"
+                    style="background: #1e1e1e; color: #d4d4d4; padding: 2rem; border-radius: 8px; overflow-x: auto; font-family: monospace;">
+                    <pre>
+openhealth-agents/
+├── core/                 # THE ENGINE (Framework Agnostic Logic)
+│   ├── orchestrator.py   # Main loop (LangGraph)
+│   └── memory/           # Vector Store (RAG)
+├── guardian/             # THE SHIELD (Safety & Compliance)
+│   ├── pii_scanner.py    # PII Redaction
+│   └── validators/       # Clinical & Tone Checks
+├── connectors/           # THE HANDS (Interoperability)
+│   ├── fhir/             # HL7 FHIR Handlers
+│   └── ehr/              # Epic/Cerner Adapters
+├── agents/               # THE IMPLEMENTATIONS (Personas)
+│   ├── provider/         # Scribe Agent
+│   ├── patient/          # Navigator Agent
+│   └── payer/            # Claims Agent
+└── interface/            # THE FACE (API & UI)
+    ├── api/              # FastAPI Backend
+    └── dashboard/        # HITL Approval Queues
+</pre>
                 </div>
             </div>
         </section>
@@ -159,6 +164,9 @@
                 <div class="footer-col">
                     <h4>OpenHealthAgents</h4>
                     <p>The open standard for healthcare AI agents.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Platform</h4>
@@ -167,13 +175,38 @@
                         <li><a href="safety.html">Safety</a></li>
                         <li><a href="architecture.html#integration">Integration</a></li>
                         <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Case Studies</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Community</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Discord">
+                            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.419-2.1568 2.419z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="X">
+                            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/openhealthagents" aria-label="GitHub">
+                            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
                     <ul>
-                        <li><a href="https://github.com/openhealthagents">GitHub</a></li>
-                        <li><a href="#">Discord</a></li>
                         <li><a href="opensource.html">Contributing</a></li>
                         <li><a href="ambassador.html">Ambassador Program</a></li>
                     </ul>
